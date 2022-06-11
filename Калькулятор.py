@@ -1,12 +1,13 @@
-# задание № 2
-# калькулятор
-# Созайте класс, где реализованы функции (методы) математических операций. А также функция для ввода данных.
+# задание № 2, калькулятор
+# Созайте класс, где реализованы функции (методы) математических операций.
+# А также функция для ввода данных.
 
 
 class Calculator():
-    def __init__(self):
-        self.func4()
+    def __init__(vnutri): # __init__ всегда отрабатывает при создании объекта
+        vnutri.func4()
 
+    # Все остальны функции отрабатывают только по вызову
     def add(self):
         return self.a + self.b
 
@@ -16,31 +17,32 @@ class Calculator():
     def myltiply(self):
         return self.a * self.b
 
-    def devide(self):
-        if self.b == 0:
+    def devide(vnut):
+        if vnut.b == 0:
             return 'error'
         else:
-            return self.a / self.b
+            return vnut.a / vnut.b
+
     def func4(self):
-        self.a = int(input())
-        self.b = int(input())
+        self.a = int(input('Введите первое значение:'))
+        self.b = int(input('Введите второе значение:'))
+
 
 while True:
-    print('пробел -  прерывание программы. Введите - +,-,*,/')
-    x = input()
+    x = input('пробел - прерывание программы. Введите: +,-,*,/  \n')
     if x == ' ':
         break
-    print('Введите значения:')
-    calculator = Calculator()
+    # print('Введите значения:')
+
+    calculator = Calculator()  # Тут идет создание объекта calculator на основании класса Calculator()
+
     if x == '+':
-        print(calculator.add())
+        otvet = calculator.add() # Вызов функций (метода) класса
     if x == '-':
-        print(calculator.substract())
+        otvet = calculator.substract()
     if x == '*':
-        print(calculator.myltiply())
+        otvet = calculator.myltiply()
     if x == '/':
-        print(calculator.devide())
+        otvet = calculator.devide()
 
-
-
-
+    print('Результат: ', otvet)
